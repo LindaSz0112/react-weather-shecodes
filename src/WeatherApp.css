@@ -1,0 +1,33 @@
+.WeatherApp .container {
+    background: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+    background-position: center center;
+    background-size: cover;
+    border: 1px solid;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    max-width: 550px;
+    max-height: 700px;
+    padding: 30px 30px 30px 45px;
+}
+
+body {
+    margin-top: 100px;
+}
+
+.author {
+    color: aliceblue;
+    font-family: "Josefin Sans", sans-serif;
+    padding: 5px 10px;
+    position: fixed;
+}
+
+.github-link {
+    color: aliceblue;
+    text-decoration: none;
+    transition: all 200ms ease-in-out;
+}
+
+.github-link:hover {
+    color: #00a6ed;
+}

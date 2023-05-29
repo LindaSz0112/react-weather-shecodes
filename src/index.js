@@ -1,13 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./WeatherApp.css";
+import Search from "./Search";
+import ExtraInfo from "./ExtraInfo";
+import CityDetails from "./CityDetails";
+import Forecast from "./Forecast";
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <div className="WeatherApp">
+      <div className="container">
+        <Search />
+        <CityDetails />
+        <ExtraInfo />
+        <Forecast />
+        <small className="author">
+          <a
+            href="https://github.com/LindaSz0112/weather-app-shecodesplus"
+            target="_blank"
+            className="github-link"
+            rel="noreferrer"
+          >
+            Open-source code
+          </a>
+          by Linda Szarvas
+        </small>
+      </div>
+    </div>
   </React.StrictMode>
 );
 

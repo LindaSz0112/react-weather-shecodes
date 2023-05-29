@@ -1,0 +1,14 @@
+.upcoming-days {
+    text-align: center;
+    padding-top: 30px;
+    font-family: "Josefin Sans", sans-serif;
+    padding-bottom: 30px;
+    color: aliceblue;
+    text-shadow: 5px 5px 5px black;
+}
+
+.weather-symbol {
+    font-size: 35px;
+
+    text-shadow: 5px 5px 5px black;
+}
