@@ -18,7 +18,7 @@ root.render(
         <Forecast />
         <small className="author">
           <a
-            href="https://github.com/LindaSz0112/weather-app-shecodesplus"
+            href="https://github.com/LindaSz0112/react-weather-shecodes.git"
             target="_blank"
             className="github-link"
             rel="noreferrer"

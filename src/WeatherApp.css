@@ -18,8 +18,8 @@ body {
 .author {
     color: aliceblue;
     font-family: "Josefin Sans", sans-serif;
-    padding: 5px 10px;
-    position: fixed;
+    padding: 5px;
+    /*position: fixed;*/
 }
 
 .github-link {
