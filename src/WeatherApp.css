@@ -1,5 +1,5 @@
 .WeatherApp .container {
-    background: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+    background: url(./images/galaxy.jpg);
     background-position: center center;
     background-size: cover;
     border: 1px solid;
