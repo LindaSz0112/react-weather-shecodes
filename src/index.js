@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "bootstrap/dist/css/bootstrap.css";
+
 import "./WeatherApp.css";
 import Search from "./Search";
 import ExtraInfo from "./ExtraInfo";
