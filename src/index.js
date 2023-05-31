@@ -24,7 +24,7 @@ root.render(
             rel="noreferrer"
           >
             Open-source code
-          </a>
+          </a>{" "}
           by Linda Szarvas
         </small>
       </div>
