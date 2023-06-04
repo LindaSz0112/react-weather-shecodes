@@ -3,7 +3,7 @@ import "./WeatherApp.css";
 import axios from "axios";
 
 export default function WeatherApp() {
-  const [loaded, setLoaded] = useState(true);
+  const [loaded, setLoaded] = useState(false);
 
   if (loaded) {
     return (
