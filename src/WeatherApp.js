@@ -5,6 +5,7 @@ import axios from "axios";
 export default function WeatherApp() {
   const [loaded, setLoaded] = useState(false);
   const [city, fetchCity] = useState(" ");
+  const [weather, setWeather] = useState({});
 
   function setCity(event) {
     fetchCity(event.target.value);
@@ -13,29 +14,43 @@ export default function WeatherApp() {
   function handleSubmit(event) {
     const apiKey = "t8c4bc88f33a8fff2c5o00a1f6b0d692";
     let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
-    axios.get(url).then();
+    axios.get(url).then(setDetails);
   }
+
+  function setDetails(response) {
+    setLoaded(true);
+    setWeather({
+      temperature: response.data.temperature.current,
+      description: response.data.condition.description,
+      wind: response.data.wind.speed,
+      humidity: response.data.temperature.humidity,
+      feelsLike: response.data.temperature.feels_like,
+    });
+  }
+
+  let form = (
+    <form className="Search">
+      <input type="text" placeholder="City" onChange={setCity} />
+      <button onClick={handleSubmit}>Search</button>
+    </form>
+  );
 
   if (loaded) {
     return (
       <div className="WeatherApp">
-        <form className="Search">
-          <input type="text" placeholder="City" onChange={setCity} />
-          <button>Search</button>
-        </form>
         <div className="CityDetails row">
           <div className="city-details col">
-            <h1>Prague</h1>
+            <h1>{city}</h1>
             <span>11.05.2023.</span>
             <br />
             <span>17:38</span>
           </div>
           <div className="temperature col">
             <h2>
-              <span className="temperature">18</span>
+              <span className="temperature">{weather.temperature}</span>
               <span className="temp-c">°C </span>
 
-              <div>Clear Sky</div>
+              <div>{weather.description}</div>
             </h2>
           </div>
         </div>
@@ -43,13 +58,22 @@ export default function WeatherApp() {
           <section className="weather-details col">
             <ul>
               <li>
-                <span className="extra-details"> Wind: 5 km/h</span>
+                <span className="extra-details">
+                  {" "}
+                  Wind: {weather.wind} km/h
+                </span>
               </li>
               <li>
-                <span className="extra-details"> Humidity: 46%</span>
+                <span className="extra-details">
+                  {" "}
+                  Humidity: {weather.humidity}%
+                </span>
               </li>
               <li>
-                <span className="extra-details"> Feels like: 17 °C</span>
+                <span className="extra-details">
+                  {" "}
+                  Feels like: {weather.feelsLike} °C
+                </span>
               </li>
             </ul>
           </section>
@@ -63,8 +87,8 @@ export default function WeatherApp() {
     return (
       <div className="WeatherApp">
         <form className="Search">
-          <input type="text" placeholder="City" />
-          <button>Search</button>
+          <input type="text" placeholder="City" onChange={setCity} />
+          <button onClick={handleSubmit}>Search</button>
         </form>
         <div className="CityDetails row">
           <div className="city-details col">
@@ -83,16 +107,16 @@ export default function WeatherApp() {
           </div>
         </div>
         <div className="ExtraInfo row">
-          <section className="weather-details col">
+          <section class="weather-details col">
             <ul>
               <li>
-                <span className="extra-details"> Wind: 5 km/h</span>
+                <span class="extra-details"> Wind: 5 km/h</span>
               </li>
               <li>
-                <span className="extra-details"> Humidity: 46%</span>
+                <span class="extra-details"> Humidity: 46%</span>
               </li>
               <li>
-                <span className="extra-details"> Feels like: 17 °C</span>
+                <span class="extra-details"> Feels like: 17 °C</span>
               </li>
             </ul>
           </section>
