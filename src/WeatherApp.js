@@ -4,16 +4,23 @@ import axios from "axios";
 
 export default function WeatherApp() {
   const [loaded, setLoaded] = useState(false);
+  const [city, fetchCity] = useState(" ");
 
-  let city = "Prague";
-  const apiKey = "t8c4bc88f33a8fff2c5o00a1f6b0d692";
-  let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  function setCity(event) {
+    fetchCity(event.target.value);
+  }
+
+  function handleSubmit(event) {
+    const apiKey = "t8c4bc88f33a8fff2c5o00a1f6b0d692";
+    let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+    axios.get(url).then();
+  }
 
   if (loaded) {
     return (
       <div className="WeatherApp">
         <form className="Search">
-          <input type="text" placeholder="City" />
+          <input type="text" placeholder="City" onChange={setCity} />
           <button>Search</button>
         </form>
         <div className="CityDetails row">
@@ -33,16 +40,16 @@ export default function WeatherApp() {
           </div>
         </div>
         <div className="ExtraInfo row">
-          <section class="weather-details col">
+          <section className="weather-details col">
             <ul>
               <li>
-                <span class="extra-details"> Wind: 5 km/h</span>
+                <span className="extra-details"> Wind: 5 km/h</span>
               </li>
               <li>
-                <span class="extra-details"> Humidity: 46%</span>
+                <span className="extra-details"> Humidity: 46%</span>
               </li>
               <li>
-                <span class="extra-details"> Feels like: 17 °C</span>
+                <span className="extra-details"> Feels like: 17 °C</span>
               </li>
             </ul>
           </section>
@@ -76,16 +83,16 @@ export default function WeatherApp() {
           </div>
         </div>
         <div className="ExtraInfo row">
-          <section class="weather-details col">
+          <section className="weather-details col">
             <ul>
               <li>
-                <span class="extra-details"> Wind: 5 km/h</span>
+                <span className="extra-details"> Wind: 5 km/h</span>
               </li>
               <li>
-                <span class="extra-details"> Humidity: 46%</span>
+                <span className="extra-details"> Humidity: 46%</span>
               </li>
               <li>
-                <span class="extra-details"> Feels like: 17 °C</span>
+                <span className="extra-details"> Feels like: 17 °C</span>
               </li>
             </ul>
           </section>
