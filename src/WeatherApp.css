@@ -15,6 +15,65 @@ body {
     margin-top: 100px;
 }
 
+form {
+    padding-bottom: 30px;
+    padding-top: 10px;
+}
+
+input {
+    border-radius: 5px;
+}
+
+button {
+    background-color: aliceblue;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px grey;
+    font-family: "Josefin Sans", sans-serif;
+    transition: all 200ms ease-in-out;
+}
+
+button:hover {
+    background-color: #273e46;
+    color: aliceblue;
+}
+
+.CityDetails .city-details {
+    padding-bottom: 30px;
+}
+
+.CityDetails h1 {
+    color: aliceblue;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 40px;
+    text-shadow: 5px 5px 5px black;
+}
+
+.CityDetails span {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 20px;
+    color: aliceblue;
+    text-shadow: 5px 5px 5px black;
+}
+
+.CityDetails h2 {
+    color: aliceblue;
+    font-family: "Josefin Sans", sans-serif;
+    text-align: center;
+    text-shadow: 5px 5px 5px black;
+}
+
+.CityDetails .temperature {
+    font-size: 90px;
+}
+
+.CityDetails .temp-c {
+    font-size: 25px;
+    position: relative;
+    top: -30px;
+    transition: all 200ms ease-in-out;
+}
+
 .author {
     color: aliceblue;
     font-family: "Josefin Sans", sans-serif;
@@ -27,6 +86,37 @@ body {
     text-decoration: none;
     transition: all 200ms ease-in-out;
 }
+
+.ExtraInfo .description {
+    color: aliceblue;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 25px;
+    position: relative;
+    text-shadow: 5px 5px 5px black;
+    text-transform: capitalize;
+    top: -20px;
+}
+
+.ExtraInfo ul {
+    color: aliceblue;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 22px;
+    list-style: none;
+    padding: 0px;
+    padding-bottom: 5px;
+    text-shadow: 5px 5px 5px black;
+}
+
+.ExtraInfo .main-symbol {
+    font-size: 50px;
+    text-align: center;
+    text-shadow: 5px 5px 5px black;
+}
+
+.ExtraInfo .extra-details {
+    font-weight: bolder;
+}
+
 
 .github-link:hover {
     color: #00a6ed;

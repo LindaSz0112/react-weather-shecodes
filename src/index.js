@@ -1,12 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "bootstrap/dist/css/bootstrap.css";
+import axios from "axios";
 
 import "./WeatherApp.css";
-import Search from "./Search";
-import ExtraInfo from "./ExtraInfo";
-import CityDetails from "./CityDetails";
-import Forecast from "./Forecast";
+import WeatherApp from "./WeatherApp";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -14,10 +12,7 @@ root.render(
   <React.StrictMode>
     <div className="WeatherApp">
       <div className="container">
-        <Search />
-        <CityDetails />
-        <ExtraInfo />
-        <Forecast />
+        <WeatherApp />
         <small className="author">
           <a
             href="https://github.com/LindaSz0112/react-weather-shecodes.git"
