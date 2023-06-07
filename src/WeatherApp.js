@@ -12,6 +12,7 @@ export default function WeatherApp() {
   }
 
   function handleSubmit(event) {
+    event.preventDefault();
     const apiKey = "t8c4bc88f33a8fff2c5o00a1f6b0d692";
     let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
     axios.get(url).then(setDetails);
@@ -31,13 +32,16 @@ export default function WeatherApp() {
   let form = (
     <form className="Search">
       <input type="text" placeholder="City" onChange={setCity} />
-      <button onClick={handleSubmit}>Search</button>
+      <button type="submit" onClick={handleSubmit}>
+        Search
+      </button>
     </form>
   );
 
   if (loaded) {
     return (
       <div className="WeatherApp">
+        {form}
         <div className="CityDetails row">
           <div className="city-details col">
             <h1>{city}</h1>
@@ -47,7 +51,9 @@ export default function WeatherApp() {
           </div>
           <div className="temperature col">
             <h2>
-              <span className="temperature">{weather.temperature}</span>
+              <span className="temperature">
+                {Math.round(weather.temperature)}
+              </span>
               <span className="temp-c">°C </span>
 
               <div>{weather.description}</div>
@@ -60,7 +66,7 @@ export default function WeatherApp() {
               <li>
                 <span className="extra-details">
                   {" "}
-                  Wind: {weather.wind} km/h
+                  Wind: {Math.round(weather.wind)} km/h
                 </span>
               </li>
               <li>
@@ -72,7 +78,7 @@ export default function WeatherApp() {
               <li>
                 <span className="extra-details">
                   {" "}
-                  Feels like: {weather.feelsLike} °C
+                  Feels like: {Math.round(weather.feelsLike)} °C
                 </span>
               </li>
             </ul>
@@ -88,7 +94,9 @@ export default function WeatherApp() {
       <div className="WeatherApp">
         <form className="Search">
           <input type="text" placeholder="City" onChange={setCity} />
-          <button onClick={handleSubmit}>Search</button>
+          <button type="submit" onClick={handleSubmit}>
+            Search
+          </button>
         </form>
         <div className="CityDetails row">
           <div className="city-details col">
