@@ -6,6 +6,7 @@ export default function WeatherApp() {
   const [loaded, setLoaded] = useState(false);
   const [city, fetchCity] = useState(" ");
   const [weather, setWeather] = useState({});
+  const [displayedCity, setDisplayedCity] = useState("");
 
   function setCity(event) {
     fetchCity(event.target.value);
@@ -27,6 +28,7 @@ export default function WeatherApp() {
       humidity: response.data.temperature.humidity,
       feelsLike: response.data.temperature.feels_like,
     });
+    setDisplayedCity(city);
   }
 
   let form = (
@@ -44,7 +46,7 @@ export default function WeatherApp() {
         {form}
         <div className="CityDetails row">
           <div className="city-details col">
-            <h1>{city}</h1>
+            <h1>{displayedCity}</h1>
             <span>11.05.2023.</span>
             <br />
             <span>17:38</span>
@@ -56,7 +58,7 @@ export default function WeatherApp() {
               </span>
               <span className="temp-c">°C </span>
 
-              <div>{weather.description}</div>
+              <div className="text-capitalize">{weather.description}</div>
             </h2>
           </div>
         </div>
