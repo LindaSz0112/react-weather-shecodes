@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./WeatherApp.css";
+import FriendlyDate from "./FriendlyDate";
 import axios from "axios";
 
 export default function WeatherApp() {
@@ -27,8 +28,10 @@ export default function WeatherApp() {
       wind: response.data.wind.speed,
       humidity: response.data.temperature.humidity,
       feelsLike: response.data.temperature.feels_like,
+      date: new Date(response.data.time * 1000),
     });
     setDisplayedCity(city);
+    console.log(weather.date);
   }
 
   let form = (
@@ -47,9 +50,9 @@ export default function WeatherApp() {
         <div className="CityDetails row">
           <div className="city-details col">
             <h1>{displayedCity}</h1>
-            <span>11.05.2023.</span>
-            <br />
-            <span>17:38</span>
+            <span>
+              <FriendlyDate date={weather.date} />
+            </span>
           </div>
           <div className="temperature col">
             <h2>
