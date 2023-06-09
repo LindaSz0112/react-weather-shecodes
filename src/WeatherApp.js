@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./WeatherApp.css";
 import FriendlyDate from "./FriendlyDate";
+import TemperatureInfo from "./TemperatureInfo";
 import axios from "axios";
 
-export default function WeatherApp(props) {
+export default function WeatherApp() {
   const [loaded, setLoaded] = useState(false);
   const [city, fetchCity] = useState("Prague");
   const [weather, setWeather] = useState({});
@@ -59,16 +60,10 @@ export default function WeatherApp(props) {
               <FriendlyDate date={weather.date} />
             </span>
           </div>
-          <div className="temperature col">
-            <h2>
-              <span className="temperature">
-                {Math.round(weather.temperature)}
-              </span>
-              <span className="temp-c">°C </span>
-
-              <div className="text-capitalize">{weather.description}</div>
-            </h2>
-          </div>
+          <TemperatureInfo celsius={weather.temperature} />
+          <h2>
+            <div className="text-capitalize">{weather.description}</div>
+          </h2>
         </div>
         <div className="ExtraInfo row">
           <section className="weather-details col">
@@ -99,8 +94,6 @@ export default function WeatherApp(props) {
         </div>
       </div>
     );
-  } else {
-    search();
-    return "Loading...";
-  }
+  } else search();
+  return "Loading...";
 }
