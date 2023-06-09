@@ -33,6 +33,7 @@ export default function WeatherApp(props) {
       humidity: response.data.temperature.humidity,
       feelsLike: response.data.temperature.feels_like,
       date: new Date(response.data.time * 1000),
+      iconUrl: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
     });
     setDisplayedCity(city);
     console.log(weather.date);
@@ -93,7 +94,7 @@ export default function WeatherApp(props) {
             </ul>
           </section>
           <div className="main-symbol col">
-            <p>🌤️</p>
+            <img src={weather.iconUrl} alt=" " className="main-symbol" />
           </div>
         </div>
       </div>
