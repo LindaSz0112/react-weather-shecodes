@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "bootstrap/dist/css/bootstrap.css";
-import axios from "axios";
 
 import "./WeatherApp.css";
 import WeatherApp from "./WeatherApp";
@@ -12,7 +11,7 @@ root.render(
   <React.StrictMode>
     <div className="WeatherApp">
       <div className="container">
-        <WeatherApp />
+        <WeatherApp defaultCity="Prague" />
         <small className="author">
           <a
             href="https://github.com/LindaSz0112/react-weather-shecodes.git"
