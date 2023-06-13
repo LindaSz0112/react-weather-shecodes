@@ -87,7 +87,7 @@ button:hover {
     transition: all 200ms ease-in-out;
 }
 
-.ExtraInfo .description {
+.description {
     color: aliceblue;
     font-family: "Josefin Sans", sans-serif;
     font-size: 25px;
@@ -97,7 +97,7 @@ button:hover {
     top: -20px;
 }
 
-.ExtraInfo ul {
+ul {
     color: aliceblue;
     font-family: "Josefin Sans", sans-serif;
     font-size: 22px;
@@ -107,10 +107,14 @@ button:hover {
     text-shadow: 5px 5px 5px black;
 }
 
-.ExtraInfo .main-symbol {
+.main-symbol {
     font-size: 50px;
     text-align: center;
     text-shadow: 5px 5px 5px black;
+}
+
+.unit {
+    color: red;
 }
 
 .ExtraInfo .extra-details {

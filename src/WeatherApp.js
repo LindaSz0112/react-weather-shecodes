@@ -60,10 +60,14 @@ export default function WeatherApp() {
               <FriendlyDate date={weather.date} />
             </span>
           </div>
-          <TemperatureInfo celsius={weather.temperature} />
-          <h2>
-            <div className="text-capitalize">{weather.description}</div>
-          </h2>
+          <div className="col">
+            <TemperatureInfo celsius={weather.temperature} />
+            <h2>
+              <div className="text-capitalize description">
+                {weather.description}
+              </div>
+            </h2>
+          </div>
         </div>
         <div className="ExtraInfo row">
           <section className="weather-details col">
