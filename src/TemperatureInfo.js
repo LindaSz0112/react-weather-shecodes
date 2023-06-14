@@ -36,7 +36,7 @@ export default function TemperatureInfo(props) {
             {Math.round((props.celsius * 9) / 5 + 32)}
           </span>
           <span className="temp-c">
-            <a href="#" onClick={showCelsius} ClassName="unit">
+            <a href="#" onClick={showCelsius}>
               °C
             </a>{" "}
             | °F

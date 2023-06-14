@@ -75,19 +75,26 @@ export default function WeatherApp() {
               <li>
                 <span className="extra-details">
                   {" "}
-                  Wind: {Math.round(weather.wind)} km/h
+                  Wind:{" "}
+                  <span className="fw-normal">
+                    {Math.round(weather.wind)} km/h
+                  </span>
                 </span>
               </li>
               <li>
                 <span className="extra-details">
                   {" "}
-                  Humidity: {weather.humidity}%
+                  Humidity:{" "}
+                  <span className="fw-normal">{weather.humidity}%</span>
                 </span>
               </li>
               <li>
                 <span className="extra-details">
                   {" "}
-                  Feels like: {Math.round(weather.feelsLike)} °C
+                  Feels like:{" "}
+                  <span className="fw-normal">
+                    {Math.round(weather.feelsLike)} °C
+                  </span>
                 </span>
               </li>
             </ul>
