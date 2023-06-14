@@ -21,7 +21,7 @@ export default function TemperatureInfo(props) {
           <span className="temperature">{Math.round(props.celsius)}</span>
           <span className="temp-c">
             °C |{" "}
-            <a href="#" onClick={showFahrenheit}>
+            <a href="javascript:void(0)" onClick={showFahrenheit}>
               °F
             </a>
           </span>
@@ -36,7 +36,7 @@ export default function TemperatureInfo(props) {
             {Math.round((props.celsius * 9) / 5 + 32)}
           </span>
           <span className="temp-c">
-            <a href="#" onClick={showCelsius}>
+            <a href="javascript:void(0)" onClick={showCelsius}>
               °C
             </a>{" "}
             | °F
