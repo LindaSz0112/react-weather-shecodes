@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./WeatherApp.css";
 import FriendlyDate from "./FriendlyDate";
 import TemperatureInfo from "./TemperatureInfo";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 
 export default function WeatherApp() {
@@ -28,6 +29,7 @@ export default function WeatherApp() {
   function setDetails(response) {
     setLoaded(true);
     setWeather({
+      cityname: response.data.city,
       temperature: response.data.temperature.current,
       description: response.data.condition.description,
       wind: response.data.wind.speed,
@@ -103,6 +105,7 @@ export default function WeatherApp() {
             <img src={weather.iconUrl} alt=" " className="main-symbol" />
           </div>
         </div>
+        <WeatherForecast cityname={weather.cityname} />
       </div>
     );
   } else search();

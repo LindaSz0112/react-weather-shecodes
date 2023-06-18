@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 
 import "./WeatherApp.css";
 import WeatherApp from "./WeatherApp";
-import Forecast from "./Forecast";
+
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -13,7 +13,7 @@ root.render(
     <div className="WeatherApp">
       <div className="container">
         <WeatherApp defaultCity="Prague" />
-        <Forecast />
+
         <small className="author">
           <a
             href="https://github.com/LindaSz0112/react-weather-shecodes.git"
