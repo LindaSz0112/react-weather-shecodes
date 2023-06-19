@@ -18,6 +18,8 @@ export default function WeatherForecast(props) {
         {forecast.map(function (dailyForecast, index) {
           if (index < 4) {
             return <WeatherForecastDay data={dailyForecast} key={index} />;
+          } else {
+            return null;
           }
         })}
       </div>
