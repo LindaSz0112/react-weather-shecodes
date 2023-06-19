@@ -12,27 +12,14 @@ export default function WeatherForecast(props) {
     setLoaded(true);
   }
 
-  function day() {
-    let date = new Date(props.data.time * 1000);
-    let day = date.getDay();
-
-    let days = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
-
-    return days[day];
-  }
-
   if (loaded) {
     return (
       <div class="upcoming-days row" id="upcoming-forecast">
-        <WeatherForecastDay data={forecast[0]} />
+        {forecast.map(function (dailyForecast, index) {
+          if (index < 4) {
+            return <WeatherForecastDay data={dailyForecast} key={index} />;
+          }
+        })}
       </div>
     );
   } else {

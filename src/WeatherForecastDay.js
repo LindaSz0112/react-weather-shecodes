@@ -20,7 +20,13 @@ export default function WeatherForecastDay(props) {
 
   return (
     <div class="first col">
-      <span class="weather-symbol"></span>
+      <span class="weather-symbol">
+        <img
+          src={props.data.condition.icon_url}
+          alt=" "
+          className="main-symbol"
+        />
+      </span>
       <br />
       {Math.round(props.data.temperature.maximum)} /{" "}
       {Math.round(props.data.temperature.minimum)}
