@@ -39,7 +39,6 @@ export default function WeatherApp() {
       iconUrl: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
     });
     setDisplayedCity(city);
-    console.log(weather.date);
   }
 
   let form = (
@@ -57,7 +56,7 @@ export default function WeatherApp() {
         {form}
         <div className="CityDetails row">
           <div className="city-details col">
-            <h1>{displayedCity}</h1>
+            <h1 className="text-capitalize">{displayedCity}</h1>
             <span>
               <FriendlyDate date={weather.date} />
             </span>
