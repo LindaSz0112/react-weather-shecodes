@@ -38,8 +38,8 @@ export default function TemperatureInfo(props) {
           <span className="temp-c">
             <a href="/" onClick={showCelsius}>
               °C
-            </a>{" "}
-            | °F
+            </a>
+            |°F
           </span>
         </h2>
       </div>
